@@ -1,0 +1,29 @@
+<h1>Bienvenido al buscador de películas</h1>
+
+<h2>Películas</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Duración</th>
+      <th>Descripción</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documentary_films.each do |document| %>
+      <tr>
+        <td><%= document.title %></td>
+        <td><%= document.duration %></td>
+        <td><%= document.description %></td>
+        <td><%= link_to 'Editar', edit_documentary_films_path(documentary_films) %></td>
+        <td><%= link_to 'Eliminar', documentary_films, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar nuevo Documental', new_documentary_films_path %>

@@ -1,0 +1,29 @@
+<h1>Bienvenido al buscador de películas</h1>
+
+<h2>Películas</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Duración</th>
+      <th>Descripción</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.duration %></td>
+        <td><%= movie.description %></td>
+        <td><%= link_to 'Editar', edit_movie_path(movie) %></td>
+        <td><%= link_to 'Eliminar', movie, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Agregar nueva película', new_movie_path %>
