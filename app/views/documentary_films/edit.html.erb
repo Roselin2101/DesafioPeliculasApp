@@ -1,0 +1,25 @@
+<div class="container">
+<h1 class="mt-5 mb-4">Editar Documental</h1>
+  <%= form_with(model: @documentary, url: documentary_path(@documentary), method: :patch, class: 'mt-5') do |form| %>
+    <div class="mb-3">
+      <%= form.label :title, 'Título', class: 'form-label' %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :duration, 'Duración', class: 'form-label' %>
+      <%= form.text_area :duration, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description, 'Descripción', class: 'form-label' %>
+      <%= form.text_field :description, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+      <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+      <%= link_to 'Volver', documentary_path, class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+
+</div>

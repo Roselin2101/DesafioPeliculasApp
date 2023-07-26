@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="mt-5 mb-4">Detalles de la película</h1>
+
+  <p><strong>Titulo:</strong> <%= @movie.title %></p>
+  <p><strong>Duración:</strong> <%= @movie.duration %></p>
+  <p><strong>Descripción:</strong> <%= @movie.description %></p>
+
+  <div class="form-group mb-4">
+    <%= link_to 'Editar', edit_movie_path(@movie), class: 'btn btn-primary' %>
+    <%= link_to 'Volver', movies_path, class: 'btn btn-primary'  %>
+  </div>
+</div>

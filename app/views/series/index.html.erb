@@ -1,0 +1,35 @@
+<div class="container">
+  <h1 class="mt-5 mb-4">Series</h1>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+        <th>Duración</th>
+        <th>Descripción</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @series.each do |serie| %>
+        <tr>
+         <td><%= serie.title %></td>
+         <td><%= serie.duration %></td>
+        <td><%= serie.description %></td>
+        <td><%= link_to 'Mostrar', series_path(serie), class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Editar', edit_series_path(serie),class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Eliminar', series_path(serie), method: :delete, data: { confirm: '¿Estás seguro de que deseas eliminar esta película?' }, class: 'btn btn-danger btn-sm' %>
+</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Agregar Serie', new_series_path, class: 'btn btn-success' %>
+  <%= link_to 'Volver', root_path, class: 'btn btn-secondary' %>
+  
+</div>
+

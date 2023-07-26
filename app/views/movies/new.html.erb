@@ -1,4 +1,6 @@
-<h1>Agregar nueva película</h1>
+
+<div class="container">
+<h1 class="mt-5 mb-4">Agregar nueva película</h1>
 
 <%= form_with(model: @movie, url: movies_path, local: true) do |form| %>
   <div>
@@ -21,4 +23,5 @@
   </div>
 <% end %>
 
-<%= link_to 'Volver', movies_path %>
+<%= link_to 'Volver', movies_path, class: 'btn btn-primary'  %>
+</div>

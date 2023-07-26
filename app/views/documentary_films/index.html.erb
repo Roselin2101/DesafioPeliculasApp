@@ -1,7 +1,9 @@
-<h1>Bienvenido al buscador de películas</h1>
+<div class="container">
+<h1 class="mt-4 mb-3">Bienvenido al buscador de películas</h1>
 
-<h2>Películas</h2>
-<table>
+<h2 class="mt-4 mb-3" >Películas</h2>
+
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Título</th>
@@ -17,8 +19,8 @@
         <td><%= document.title %></td>
         <td><%= document.duration %></td>
         <td><%= document.description %></td>
-        <td><%= link_to 'Editar', edit_documentary_films_path(documentary_films) %></td>
-        <td><%= link_to 'Eliminar', documentary_films, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        <td><%= link_to 'Editar', edit_documentary_films_path(documentary_films), class: 'btn btn-primary btn-sm' %></td>
+        <td><%= link_to 'Eliminar', documentary_films, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn btn-primary btn-sm'%></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +28,6 @@
 
 <br>
 
-<%= link_to 'Agregar nuevo Documental', new_documentary_films_path %>
+<%= link_to 'Agregar Nuevo Documental',  new_documentary_film_path, class: 'btn btn-primary btn-sm'%>
+
+</div>

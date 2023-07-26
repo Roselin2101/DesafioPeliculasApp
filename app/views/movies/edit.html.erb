@@ -1,0 +1,25 @@
+<div class="container">
+<h1 class="mt-5 mb-4">Editar película</h1>
+  <%= form_with(model: @movie, url: movie_path(@movie), method: :patch, class: 'mt-5') do |form| %>
+    <div class="mb-3">
+      <%= form.label :title, 'Titulo', class: 'form-label' %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :duration, 'Duración', class: 'form-label' %>
+      <%= form.text_area :duration, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :description, 'Description', class: 'form-label' %>
+      <%= form.text_field :description, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+      <%= form.submit 'Guardar', class: 'btn btn-primary' %>
+      <%= link_to 'Volver', movies_path, class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+
+</div>

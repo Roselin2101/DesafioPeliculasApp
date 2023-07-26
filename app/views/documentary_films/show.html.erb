@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="mt-5 mb-4">Detalles del Documental</h1>
+
+  <p><strong>Titulo:</strong> <%= @documentary.title %></p>
+  <p><strong>Duración:</strong> <%= @documentary.duration %></p>
+  <p><strong>Descripción:</strong> <%= @documentary.description %></p>
+
+  <div class="form-group mb-4">
+    <%= link_to 'Editar', edit_documentary_path(@documentary), class: 'btn btn-primary' %>
+    <%= link_to 'Volver', documentary_path, class: 'btn btn-primary' %>
+  </div>
+</div>
